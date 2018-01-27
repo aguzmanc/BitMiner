@@ -6,18 +6,19 @@ public class SpriteHandlerEightDir : MonoBehaviour {
 	private Animator animator;
 	public Vector3 forward;
 
-	Vector3[] _directions = {
-		new Vector3(0, 0, -1),
-		Vector3.Normalize(new Vector3(1, 0, -1)),
-		new Vector3(1, 0, 0),
-		Vector3.Normalize(new Vector3(1, 0, 1)),
-		new Vector3(0, 0, 1),
-		Vector3.Normalize(new Vector3(-1, 0, 1)),
-		new Vector3(-1, 0, 0),
-		Vector3.Normalize(new Vector3(-1, 0, -1))
-	};
+	Vector3[] _directions;
 
 	void Start() {
+		_directions = new Vector3[]{
+			Vector3.Normalize(Quaternion.Euler (0, Camera.main.transform.eulerAngles.y, 0) * new Vector3(0, 0, -1)),
+			Vector3.Normalize(Quaternion.Euler (0, Camera.main.transform.eulerAngles.y, 0) * new Vector3(1, 0, -1)),
+			Vector3.Normalize(Quaternion.Euler (0, Camera.main.transform.eulerAngles.y, 0) * new Vector3(1, 0, 0)),
+			Vector3.Normalize(Quaternion.Euler (0, Camera.main.transform.eulerAngles.y, 0) * new Vector3(1, 0, 1)),
+			Vector3.Normalize(Quaternion.Euler (0, Camera.main.transform.eulerAngles.y, 0) * new Vector3(0, 0, 1)),
+			Vector3.Normalize(Quaternion.Euler (0, Camera.main.transform.eulerAngles.y, 0) * new Vector3(-1, 0, 1)),
+			Vector3.Normalize(Quaternion.Euler (0, Camera.main.transform.eulerAngles.y, 0) * new Vector3(-1, 0, 0)),
+			Vector3.Normalize(Quaternion.Euler (0, Camera.main.transform.eulerAngles.y, 0) * new Vector3(-1, 0, -1))
+		};
 		animator = this.GetComponent<Animator>();
 	}
 
