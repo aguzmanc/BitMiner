@@ -151,6 +151,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 23099030013430572, guid: bbcc0b555f2f6bb4c9f456366ae843ef,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8f05a4875a5c342c8b13b443a0da8be5, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bbcc0b555f2f6bb4c9f456366ae843ef, type: 2}
   m_IsPrefabParent: 0
@@ -163,8 +168,8 @@ GameObject:
   m_Component:
   - component: {fileID: 366009248}
   - component: {fileID: 366009246}
-  - component: {fileID: 366009249}
   - component: {fileID: 366009247}
+  - component: {fileID: 366009249}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -227,34 +232,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 0.2
   direction: {x: 0, y: 0, z: 0}
---- !u!1 &368281835
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 368281836}
-  m_Layer: 0
-  m_Name: Reference
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &368281836
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 368281835}
-  m_LocalRotation: {x: -0.24294639, y: 0, z: 0, w: 0.9700398}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1180377317}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -28.121, y: 0, z: 0}
 --- !u!1 &577473681
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,8 +458,7 @@ Transform:
   m_LocalRotation: {x: 0.3213938, y: -0.3213938, z: 0.116977744, w: 0.8830223}
   m_LocalPosition: {x: 17.5, y: 21, z: -17.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 368281836}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 40, y: -40, z: 0}
@@ -498,7 +474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 366009248}
-  Smoothness: 0.1
+  Smoothness: 0.5
   PlayerOffset: {x: 10, y: 10, z: -10}
 --- !u!1 &1586524005
 GameObject:
