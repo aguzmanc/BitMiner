@@ -8,11 +8,9 @@ public class Follower : MonoBehaviour {
 	public float Smoothness = 0.125f;
 	public Vector3 PlayerOffset;
 
-	void FixedUpdate () {
+	void Update () {
 		Vector3 desiredPosition = Player.position + PlayerOffset;
 		Vector3 smoothedPosition = Vector3.Lerp (transform.position, desiredPosition, Smoothness);
 		transform.position = smoothedPosition;
-
-		transform.LookAt (Player);
 	}
 }
