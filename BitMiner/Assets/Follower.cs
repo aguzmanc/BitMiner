@@ -5,7 +5,7 @@ using UnityEngine;
 public class Follower : MonoBehaviour {
 
 	public Transform Player;
-	public float Smoothness = 0.125f;
+	public float Smoothness = 0.1f;
 	public Vector3 PlayerOffset;
 
 	void Update () {

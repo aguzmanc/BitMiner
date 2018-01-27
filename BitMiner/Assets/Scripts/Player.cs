@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-	public float MovementSpeed = 10;
+	[Range(10,100)]
+	public int MovementSpeed = 40;
+	public Transform ReferenceVector;
 
-	public float _horizontalAxis;
-	public float _verticalAxis;
-
-	public Transform ReferenceTransformMovement;
+	float _horizontalAxis;
+	float _verticalAxis;
 
 	void Update () {
 		_horizontalAxis = Input.GetAxis ("Horizontal");
 		_verticalAxis = Input.GetAxis ("Vertical");
 
 		Vector3 movement = new Vector3 (0.01f * MovementSpeed * _horizontalAxis, 0, 0.01f * MovementSpeed * _verticalAxis);
-		transform.Translate (ReferenceTransformMovement.TransformDirection(movement));
+		transform.Translate (ReferenceVector.TransformDirection(movement));
 	}
 }
