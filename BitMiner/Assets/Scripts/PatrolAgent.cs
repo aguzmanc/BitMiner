@@ -14,8 +14,9 @@ public class PatrolAgent : MonoBehaviour {
 
 	int _destPointIndex;
 	NavMeshAgent _agent;
-	bool _isPatrolling;
-	int _direction;
+	bool _isPatrolling = true;
+	int _direction = 1; // -1 or 1
+	public bool _isStopped = false;
 
 	// Use this for initialization
 	void Start () {
@@ -53,9 +54,14 @@ public class PatrolAgent : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		_agent.speed = Speed;
-		if (_isPatrolling) {
-			if (!_agent.pathPending && _agent.remainingDistance < 0.5f) {
-				GoToNextPoint ();
+		if (_isStopped) {
+			_agent.isStopped = true;
+		} else {
+			_agent.isStopped = false;
+			if (_isPatrolling) {
+				if (!_agent.pathPending && _agent.remainingDistance < 0.5f) {
+					GoToNextPoint ();
+				}
 			}
 		}
 	}
@@ -74,6 +80,16 @@ public class PatrolAgent : MonoBehaviour {
 	public void KeepPatrolling() {
 		_agent.destination = Points[_destPointIndex].position;
 		_isPatrolling = true;
+	}
+
+	public void StopForSeconds(float secondsToStop) {
+		StartCoroutine (StopAndWait (secondsToStop));
+	}
+
+	IEnumerator StopAndWait(float secondsToStop) {
+		_isStopped = true;
+		yield return new WaitForSeconds (secondsToStop);
+		_isStopped = false;
 	}
 
 	IEnumerator ChangeDirectionAfterRandomTime() {

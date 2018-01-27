@@ -31,7 +31,6 @@ public class Detector : MonoBehaviour {
 					foundTarget = true;
 					targetPosition = hit.collider.transform.position;
 					rayColor = Color.green;
-					break;
 				}
 			}
 			Debug.DrawRay (ray.origin, ray.direction * Range, rayColor);
