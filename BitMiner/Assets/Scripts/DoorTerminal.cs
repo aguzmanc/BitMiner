@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class DoorTerminal : MonoBehaviour 
 {
+	public bool _canBeHacked;
 	bool _isNear;
 	bool _isHacking;
 
+	public float DisableTimeOnBackHack = 5f;
 	public GameObject AButtonPrototype;
 	public GameObject BButtonPrototype;
 	public GameObject XButtonPrototype;
@@ -20,10 +22,12 @@ public class DoorTerminal : MonoBehaviour
 	{
 		_prototypes = new GameObject[4]
 			{AButtonPrototype,BButtonPrototype,XButtonPrototype,YButtonPrototype};
+		_isNear = false;
 	}
 
 	void Start()
 	{
+		_canBeHacked = true;
 		_currentHackButton = _GenerateHackButton();
 	}
 
@@ -42,7 +46,7 @@ public class DoorTerminal : MonoBehaviour
 		if(other.tag != "Player")
 			return;
 
-		_isNear = true;
+		_isNear = false;
 		_currentHackButton.Hide();
 	}
 
@@ -52,18 +56,18 @@ public class DoorTerminal : MonoBehaviour
 		if(other.tag != "Player")
 			return;
 
-		if(_HasPressedSomething()){
+		if(_HasPressedSomething() && _canBeHacked){
 			if(_HasPressedCorrectly()){
 				_currentHackButton.Correct();
 				Destroy(_currentHackButton.gameObject, 3);
 				_currentHackButton = _GenerateHackButton();
+				_currentHackButton.Show();
 			}
 			else{
 				_currentHackButton.Incorrect();
+				StartCoroutine(_WrongAnswerCoroutine());
 				Destroy(_currentHackButton.gameObject, 3);
 			}
-
-			
 		}
 	}
 
@@ -74,6 +78,17 @@ public class DoorTerminal : MonoBehaviour
 		newButton.transform.parent = transform;
 
 		return newButton.GetComponent<HackButton>();
+	}
+
+
+	IEnumerator _WrongAnswerCoroutine()
+	{
+		_canBeHacked = false;
+		yield return new WaitForSeconds(DisableTimeOnBackHack);
+		_canBeHacked = true;
+		_currentHackButton = _GenerateHackButton();
+		if(_isNear)
+			_currentHackButton.Show();
 	}
 
 
