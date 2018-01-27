@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorTerminal : MonoBehaviour 
+public class Terminal : MonoBehaviour 
 {
-	public bool _canBeHacked;
+	bool _canBeHacked;
 	bool _isNear;
 	bool _isHacking;
 
+	[Range(1, 20)]
 	public float DisableTimeOnBackHack = 5f;
 	public GameObject AButtonPrototype;
 	public GameObject BButtonPrototype;
@@ -62,8 +63,10 @@ public class DoorTerminal : MonoBehaviour
 				Destroy(_currentHackButton.gameObject, 3);
 				_currentHackButton = _GenerateHackButton();
 				_currentHackButton.Show();
+				_isHacking = true;
 			}
 			else{
+				_isHacking = false;
 				_currentHackButton.Incorrect();
 				StartCoroutine(_WrongAnswerCoroutine());
 				Destroy(_currentHackButton.gameObject, 3);
