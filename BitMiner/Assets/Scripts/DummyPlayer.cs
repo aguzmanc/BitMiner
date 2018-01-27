@@ -14,7 +14,6 @@ public class DummyPlayer : MonoBehaviour
 		float vv = Input.GetAxis("Vertical");
 
 		Vector3 direction = new Vector3(hh, 0, vv).normalized;
-		transform.TransformDirection(*)
 		//direction = ReferenceTransformMovement.TransformDirection(direction).normalized;
 		transform.rotation = Quaternion.LookRotation(direction);
 
