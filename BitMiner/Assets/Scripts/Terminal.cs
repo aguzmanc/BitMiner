@@ -24,7 +24,9 @@ public class Terminal : MonoBehaviour
 	public GameObject BButtonPrototype;
 	public GameObject XButtonPrototype;
 	public GameObject YButtonPrototype;
+	public GameObject HackedMessagePrototype;
 
+	HackedMessage _hackedMessage;
 
 
 	public virtual void Awake()
@@ -33,6 +35,8 @@ public class Terminal : MonoBehaviour
 			{AButtonPrototype,BButtonPrototype,XButtonPrototype,YButtonPrototype};
 		_isNear = false;
 		_isHacked = false;
+
+		_hackedMessage = Instantiate (HackedMessagePrototype, transform.position, transform.rotation).GetComponent<HackedMessage>();
 	}
 
 	void Start()
@@ -119,6 +123,7 @@ public class Terminal : MonoBehaviour
 			if(_remainingKeysTohack==0) {
 				_isHacked = true;
 				Hack();
+				_hackedMessage.Show ();
 
 				StopCoroutine(_retractCoroutine);
 				if (!CanBeHackedMultipleTimes) {
@@ -126,6 +131,7 @@ public class Terminal : MonoBehaviour
 					Destroy (this);
 				} else {
 					_canBeHacked = false;
+					StartCoroutine (HideMessageAfterSeconds ());
 				}
 			}
 		}
@@ -178,6 +184,11 @@ public class Terminal : MonoBehaviour
 			Input.GetButtonDown("BButton") ||
 			Input.GetButtonDown("XButton") ||
 			Input.GetButtonDown("YButton");
+	}
+
+	IEnumerator HideMessageAfterSeconds() {
+		yield return new WaitForSeconds (3);
+		_hackedMessage.Hide ();
 	}
 
 	Coroutine _retractCoroutine;
