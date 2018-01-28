@@ -413,6 +413,7 @@ MonoBehaviour:
   YButtonPrototype: {fileID: 1567517701247196, guid: 486240b3a5530884e9a2dbcd3c6a0c06,
     type: 2}
   player: {fileID: 0}
+  Budget: 2
 --- !u!114 &114115133962623258
 MonoBehaviour:
   m_ObjectHideFlags: 1

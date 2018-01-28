@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 65001002240869278}
   - component: {fileID: 54715382524471274}
   - component: {fileID: 114187075494116220}
-  - component: {fileID: 65297855275726018}
+  - component: {fileID: 65220824041408690}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -165,7 +165,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65297855275726018
+--- !u!65 &65220824041408690
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -175,8 +175,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.5344257, y: 1, z: 2.685555}
-  m_Center: {x: 0.6991463, y: 0, z: -0.14018655}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95645061878892202
 Animator:
   serializedVersion: 3
@@ -206,9 +206,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 20
-  deathEffect: {fileID: 198370281244925432}
-  innerDeathEffect: {fileID: 198664723652700558}
-  sprite: {fileID: 1451433946317268}
+  DeathEffect: {fileID: 198370281244925432}
+  InnerDeathEffect: {fileID: 198664723652700558}
+  Sprite: {fileID: 1451433946317268}
+  ScoreUI: {fileID: 0}
 --- !u!114 &114363388460275410
 MonoBehaviour:
   m_ObjectHideFlags: 1
