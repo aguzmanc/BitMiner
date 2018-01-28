@@ -14,7 +14,7 @@ public class Player : MonoBehaviour {
 	float _verticalAxis;
 	Rigidbody _body;
 	Vector3 _direction;
-	bool _canPlay = true;
+	bool _canMove = true;
 
 	void Awake() {
 		_body = GetComponent<Rigidbody>();
@@ -23,10 +23,10 @@ public class Player : MonoBehaviour {
 	void OnTriggerEnter(Collider col) {
 		if (col.gameObject.CompareTag ("Enemy")) {
 			Debug.Log ("KILLED");
-			if (_canPlay) {
+			if (_canMove) {
 				deathEffect.Play ();
 				innerDeathEffect.Play ();
-				_canPlay = false;
+				_canMove = false;
 			}
 			sprite.SetActive (false);
 			StartCoroutine (Respawn());
@@ -54,6 +54,10 @@ public class Player : MonoBehaviour {
 		}
 
 		_body.transform.Translate(new Vector3(0,0, 0.01f * MovementSpeed * (Mathf.Abs(_horizontalAxis) + Mathf.Abs(_verticalAxis))), Space.Self);
+	}
+
+	public void WinCoins() {
+		Debug.Log ("Pretend this game you 100000$");
 	}
 
 	IEnumerator Respawn() {
