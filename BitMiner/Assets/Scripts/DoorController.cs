@@ -7,6 +7,9 @@ public class DoorController : MonoBehaviour {
 	public float SecondsToWaitToClose = 1;
 	public bool IsLocked = true;
 	public EnemyController[] EnemiesLocked;
+	public AudioClip OpenAudio;
+	public AudioClip CloseAudio;
+	public GameObject AudioSourcePrototype;
 
 	Door[] _doors;
 	NavMeshObstacle _nvo;
@@ -37,12 +40,14 @@ public class DoorController : MonoBehaviour {
 	}
 
 	public void OpenDoors() {
+		Instantiate (AudioSourcePrototype).GetComponent<SoundEffectController> ().Play (OpenAudio);
 		for (int i = 0; i < _doors.Length; i++) {
 			_doors [i].Open ();
 		}
 	}
 
 	public void CloseDoors() {
+		Instantiate (AudioSourcePrototype).GetComponent<SoundEffectController> ().Play (CloseAudio);
 		for (int i = 0; i < _doors.Length; i++) {
 			_doors [i].Close ();
 		}
