@@ -75,7 +75,7 @@ public class Terminal : MonoBehaviour
 			return;
 
 		if(_HasPressedSomething() && _canBeHacked){
-			if(_HasPressedCorrectly()){
+			if(HasPressedCorrectly()){
 				_remainingKeysTohack--;
 				_currentHackButton.Correct();
 				Destroy(_currentHackButton.gameObject, 3);
@@ -142,7 +142,7 @@ public class Terminal : MonoBehaviour
 	}
 
 
-	bool _HasPressedCorrectly()
+	public virtual bool HasPressedCorrectly()
 	{
 		return
 			(_currentHackButton.CurrentButton==HackButton.JoystickButton.A && Input.GetButtonDown("AButton")) ||
