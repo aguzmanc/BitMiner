@@ -77,17 +77,15 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFilterTypeDirect: 0
-    m_PVRFilterTypeIndirect: 0
-    m_PVRFilterTypeAO: 0
+    m_PVRFiltering: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
-    m_PVRFilteringAtrousPositionSigmaIndirect: 2
-    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_PVRFilteringAtrousColorSigma: 1
+    m_PVRFilteringAtrousNormalSigma: 1
+    m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -109,8 +107,6 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
-    debug:
-      m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 26df5405fa55f8f4f8e126a91e1e987e, type: 2}
 --- !u!1001 &144078892
 Prefab:
@@ -443,6 +439,30 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1795066776}
+    - target: {fileID: 114086829259481834, guid: c3093c2cd30c3df4694841f0b38e6dca,
+        type: 2}
+      propertyPath: AButtonPrototype
+      value: 
+      objectReference: {fileID: 1567517701247196, guid: 486240b3a5530884e9a2dbcd3c6a0c06,
+        type: 2}
+    - target: {fileID: 114086829259481834, guid: c3093c2cd30c3df4694841f0b38e6dca,
+        type: 2}
+      propertyPath: BButtonPrototype
+      value: 
+      objectReference: {fileID: 1875964306509896, guid: fcbaf2e5ac2af20409ed3a38109f5649,
+        type: 2}
+    - target: {fileID: 114086829259481834, guid: c3093c2cd30c3df4694841f0b38e6dca,
+        type: 2}
+      propertyPath: XButtonPrototype
+      value: 
+      objectReference: {fileID: 1425138978517280, guid: 510470214acb0b841878927fe4f9ab2a,
+        type: 2}
+    - target: {fileID: 114086829259481834, guid: c3093c2cd30c3df4694841f0b38e6dca,
+        type: 2}
+      propertyPath: YButtonPrototype
+      value: 
+      objectReference: {fileID: 1512436509682282, guid: 2a9081189007d4f4f9b186637a43e71a,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3093c2cd30c3df4694841f0b38e6dca, type: 2}
   m_IsPrefabParent: 0
