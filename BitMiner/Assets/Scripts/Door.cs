@@ -33,14 +33,14 @@ public class Door : MonoBehaviour {
 		if (_isOpening) {
 			_isClosing = false;
 			transform.position = Vector3.Lerp(transform.position, PositionOpen, Time.deltaTime * OpenSpeed);
-			if (Vector3.Distance (transform.position, PositionOpen) < 0.01f) {
+			if (Vector3.Distance (transform.position, PositionOpen) < 0.001f) {
 				_isOpening = false;
 			}
 		}
 		if (_isClosing) {
 			_isOpening = false;
 			transform.position = Vector3.Lerp(transform.position, PositionClosed, Time.deltaTime * OpenSpeed);
-			if (Vector3.Distance (transform.position, PositionClosed) < 0.01f) {
+			if (Vector3.Distance (transform.position, PositionClosed) < 0.001f) {
 				_isClosing = false;
 			}
 		}

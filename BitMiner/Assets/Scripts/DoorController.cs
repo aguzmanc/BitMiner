@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class DoorController : MonoBehaviour {
 	public float SecondsToWaitToClose = 1;
 	public bool IsLocked = true;
+	public EnemyController[] EnemiesLocked;
 
 	Door[] _doors;
 	NavMeshObstacle _nvo;
@@ -16,6 +17,13 @@ public class DoorController : MonoBehaviour {
 	void Start () {
 		_doors = GetComponentsInChildren<Door> ();
 		_nvo = GetComponent<NavMeshObstacle> ();
+		if (IsLocked) {
+			for (int i = 0; i < EnemiesLocked.Length; i++) {
+				EnemiesLocked [i].Lock ();
+			}
+		} else {
+			_nvo.enabled = false;
+		}
 	}
 
 	// Update is called once per frame
@@ -32,18 +40,20 @@ public class DoorController : MonoBehaviour {
 		for (int i = 0; i < _doors.Length; i++) {
 			_doors [i].Open ();
 		}
-		_nvo.enabled = false;
 	}
 
 	public void CloseDoors() {
 		for (int i = 0; i < _doors.Length; i++) {
 			_doors [i].Close ();
 		}
-		_nvo.enabled = true;
 	}
 
 	public void Unlock() {
 		IsLocked = false;
+		_nvo.enabled = false;
+		for (int i = 0; i < EnemiesLocked.Length; i++) {
+			EnemiesLocked [i].Unlock ();
+		}
 	}
 
 	void OnTriggerEnter(Collider other) {
@@ -55,7 +65,7 @@ public class DoorController : MonoBehaviour {
 	}
 
 	void HandleTrigger(Collider other) {
-		if (!IsLocked && other.tag == "Player") {
+		if (!IsLocked && (other.tag == "Player" || other.tag == "Enemy")) {
 			OpenDoors ();
 			_remainingCooldown = SecondsToWaitToClose;
 		}

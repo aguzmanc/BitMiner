@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 	[Range(5, 50)]
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour {
 				_canPlay = false;
 			}
 			sprite.SetActive (false);
+			StartCoroutine (Respawn());
 		}
 	}
 
@@ -52,5 +54,12 @@ public class Player : MonoBehaviour {
 		}
 
 		_body.transform.Translate(new Vector3(0,0, 0.01f * MovementSpeed * (Mathf.Abs(_horizontalAxis) + Mathf.Abs(_verticalAxis))), Space.Self);
+	}
+
+	IEnumerator Respawn() {
+		yield return new WaitForSeconds (1);
+		float fadeTime = GameObject.Find ("GameManager").GetComponent<Fading> ().BeginFade (1);
+		yield return new WaitForSeconds (fadeTime);
+		SceneManager.LoadScene (0);
 	}
 }
