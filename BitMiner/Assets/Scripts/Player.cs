@@ -57,7 +57,7 @@ public class Player : MonoBehaviour {
 	}
 
 	public void WinCoins() {
-		Debug.Log ("Pretend this game you 100000$");
+		Debug.Log ("Pretend this means 100000$");
 	}
 
 	IEnumerator Respawn() {

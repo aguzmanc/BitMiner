@@ -5,24 +5,28 @@ using UnityEngine;
 public class BitcoinTerminal : Terminal 
 {
 	public Player player;
-	CoinTransmission _cointransmission;
+	CoinTransmission _coinTransmission;
+	ParticleSystem _bitcoinParticleSystem;
 
 	public override void Awake() {
 		base.Awake();
 
-		_cointransmission = GetComponentInChildren<CoinTransmission>();
-		_cointransmission.Target = player.transform;
+		_coinTransmission = GetComponentInChildren<CoinTransmission>();
+		_coinTransmission.Target = player.transform;
+
+		_bitcoinParticleSystem = GetComponentInChildren<ParticleSystem>();
 	}
 
 	public override void UpdateRemainingKeys() {
-		_cointransmission.DesiredProgress = ((float)NumberKeysToHack - _remainingKeysTohack)/NumberKeysToHack;
+		_coinTransmission.DesiredProgress = ((float)NumberKeysToHack - _remainingKeysTohack)/NumberKeysToHack;
 	}
 
 	public override void Exit()	{
-		_cointransmission.DesiredProgress = 0;
+		_coinTransmission.DesiredProgress = 0;
 	}
 
 	public override void Hack() {
+		_bitcoinParticleSystem.Play ();
 		player.WinCoins ();
 	}
 }
