@@ -1,70 +1,63 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class DoorController : MonoBehaviour {
-
-	public int Direction = 0;
-	public float OpenSpeed = 3;
-	public float Width = 1;
-	public float Height = 2.5f;
-	public float SecondsToWaitToClose = 3;
+	public float SecondsToWaitToClose = 1;
 	public bool IsLocked = true;
 
-	bool _isOpening = false;
-	bool _isClosing = false;
-	Vector3 PositionClosed;
-	Vector3 PositionOpen;
+	Door[] _doors;
+	NavMeshObstacle _nvo;
+	bool _doorsAreOpen = false;
+	public float _remainingCooldown = 0;
 
 	// Use this for initialization
 	void Start () {
-		PositionClosed = transform.position;
-		switch (Direction) {
-		case 0:
-			PositionOpen = transform.position + new Vector3 (0, 0, Width);
-			break;
-		case 1:
-		default:
-			PositionOpen = transform.position + new Vector3 (0, 0, -Width);
-			break;
-			
-		}
+		_doors = GetComponentsInChildren<Door> ();
+		_nvo = GetComponent<NavMeshObstacle> ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		if (_isOpening) {
-			transform.position = Vector3.Lerp(transform.position, PositionOpen, Time.deltaTime * OpenSpeed);
-			if (Vector3.Distance (transform.position, PositionOpen) < 0.01f) {
-				_isOpening = false;
-				StartCoroutine (WaitAndClose ());
-			}
-		}
-		if (_isClosing) {
-			transform.position = Vector3.Lerp(transform.position, PositionClosed, Time.deltaTime * OpenSpeed);
-			if (Vector3.Distance (transform.position, PositionClosed) < 0.01f) {
-				_isClosing = false;
+		if (_remainingCooldown > 0) {
+			_remainingCooldown -= Time.deltaTime;
+			if (_remainingCooldown <= 0) {
+				CloseDoors ();
 			}
 		}
 	}
 
-	public void Open() {
-		_isOpening = true;
+	public void OpenDoors() {
+		for (int i = 0; i < _doors.Length; i++) {
+			_doors [i].Open ();
+		}
+		_nvo.enabled = false;
+	}
+
+	public void CloseDoors() {
+		for (int i = 0; i < _doors.Length; i++) {
+			_doors [i].Close ();
+		}
+		_nvo.enabled = true;
 	}
 
 	public void Unlock() {
 		IsLocked = false;
 	}
 
-	public void OnTriggerEnter(Collider other) {
-		Debug.Log (other);
-		if (!IsLocked && other.tag == "Player") {
-			Open ();
-		}
+	void OnTriggerEnter(Collider other) {
+		HandleTrigger (other);
 	}
 
-	IEnumerator WaitAndClose() {
-		yield return new WaitForSeconds (SecondsToWaitToClose);
-		_isClosing = true;
+	void OnTriggerStay(Collider other) {
+		HandleTrigger (other);
+	}
+
+	void HandleTrigger(Collider other) {
+		if (!IsLocked && other.tag == "Player") {
+			OpenDoors ();
+			_remainingCooldown = SecondsToWaitToClose;
+		}
 	}
 }

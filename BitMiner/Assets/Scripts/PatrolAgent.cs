@@ -21,7 +21,7 @@ public class PatrolAgent : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		InitializePoints ();
-		RandomizeStartingPosition ();
+		//RandomizeStartingPosition ();
 		_agent = GetComponent<NavMeshAgent> ();
 		_agent.autoBraking = false;
 		_agent.speed = Speed;
