@@ -26,6 +26,18 @@ public class Player : MonoBehaviour {
 		ScoreUI.text = "000";
 	}
 
+	public void TouchedByEnemy()
+	{
+		Debug.Log ("KILLED");
+		if (_canMove) {
+			DeathEffect.Play ();
+			InnerDeathEffect.Play ();
+			_canMove = false;
+		}
+		Sprite.SetActive (false);
+		StartCoroutine (Respawn());
+	}
+	/*
 	void OnTriggerEnter(Collider col) {
 		if (col.gameObject.CompareTag ("Enemy")) {
 			Debug.Log ("KILLED");
@@ -39,6 +51,7 @@ public class Player : MonoBehaviour {
 			StartCoroutine (Respawn());
 		}
 	}
+	*/
 
 	void Update () {
 		if (Sprite.activeInHierarchy)

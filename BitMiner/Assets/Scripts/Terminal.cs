@@ -177,6 +177,9 @@ public class Terminal : MonoBehaviour
 
 	public virtual bool HasPressedCorrectly()
 	{
+		// Debug.Log(_currentHackButton.CurrentButton);
+		Debug.Log(name);
+
 		return
 			(_currentHackButton.CurrentButton==HackButton.JoystickButton.A && Input.GetButtonDown("AButton")) ||
 			(_currentHackButton.CurrentButton==HackButton.JoystickButton.B && Input.GetButtonDown("BButton")) ||
