@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 	public float MovementSpeed = 0.2f;
 	public ParticleSystem deathEffect;
+	public ParticleSystem innerDeathEffect;
 	public GameObject sprite;
 
 	float _horizontalAxis;
@@ -22,6 +23,7 @@ public class Player : MonoBehaviour {
 			Debug.Log ("KILLED");
 			if (_canPlay) {
 				deathEffect.Play ();
+				innerDeathEffect.Play ();
 				_canPlay = false;
 			}
 			sprite.SetActive (false);
