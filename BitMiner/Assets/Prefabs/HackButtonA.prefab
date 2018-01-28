@@ -190,6 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentButton: 0
+  Hidden: 0
 --- !u!212 &212301842855425496
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -221,7 +222,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 640ea72e0cf8dc44898afa627e5227ca, type: 3}
   m_Color: {r: 0, g: 0.66176474, b: 0.08671409, a: 1}
   m_FlipX: 0

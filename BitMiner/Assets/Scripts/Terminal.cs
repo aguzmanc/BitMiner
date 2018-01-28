@@ -19,6 +19,7 @@ public class Terminal : MonoBehaviour
 
 	[Range(1, 20)]
 	public float DisableTimeOnBackHack = 5f;
+	public bool CanBeHackedMultipleTimes = false;
 	public GameObject AButtonPrototype;
 	public GameObject BButtonPrototype;
 	public GameObject XButtonPrototype;
@@ -48,24 +49,32 @@ public class Terminal : MonoBehaviour
 			return;
 
 		_isNear = true;
-		_currentHackButton.Show();
+		if (_canBeHacked) {
+			_currentHackButton.Show ();
+		}
 	}
 
 	void OnTriggerExit(Collider other)
 	{
 		if(other.tag != "Player")
 			return;
-
+	
 		_isNear = false;
 		if(_currentHackButton != null  && ! _currentHackButton.Hidden)
 			_currentHackButton.Hide();
-
 		_remainingKeysTohack = NumberKeysToHack;
-
+		
 		if(_retractCoroutine != null)
 			StopCoroutine(_retractCoroutine);
+		
+		if (!_isHacked) {
+			Exit ();
+		}
 
-		Exit();
+		if (_isHacked && CanBeHackedMultipleTimes) {
+			_isHacked = false;
+			_canBeHacked = true;
+		}
 	}
 
 
@@ -73,14 +82,20 @@ public class Terminal : MonoBehaviour
 	{
 		if(other.tag != "Player")
 			return;
+	
+		if (_canBeHacked && _currentHackButton.Hidden) {
+			_currentHackButton.Show ();
+		}
 
 		if(_HasPressedSomething() && _canBeHacked){
 			if(HasPressedCorrectly()){
 				_remainingKeysTohack--;
 				_currentHackButton.Correct();
 				Destroy(_currentHackButton.gameObject, 3);
-				_currentHackButton = _GenerateHackButton();
-				_currentHackButton.Show();
+				_currentHackButton = _GenerateHackButton ();
+				if (_remainingKeysTohack > 0) {
+					_currentHackButton.Show ();
+				}
 
 				if(!_isHacking) {
 					_isHacking = false;
@@ -106,7 +121,12 @@ public class Terminal : MonoBehaviour
 				Hack();
 
 				StopCoroutine(_retractCoroutine);
-				Destroy(this);
+				if (!CanBeHackedMultipleTimes) {
+					//_currentHackButton.Hide ();
+					Destroy (this);
+				} else {
+					_canBeHacked = false;
+				}
 			}
 		}
 
