@@ -359,6 +359,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -374,18 +388,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274eeb18db883ef45b78460d962fc6cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isNear: 0
   _isHacking: 0
   NumberKeysToHack: 10
   SecondsBeforeRetract: 1
   DisableTimeOnBackHack: 5
   CanBeHackedMultipleTimes: 0
-  AButtonPrototype: {fileID: 1567517701247196, guid: 486240b3a5530884e9a2dbcd3c6a0c06,
+  AButtonPrototype: {fileID: 1567517701247196, guid: cfbbc5d0cc15b4b989cec005621e361c,
     type: 2}
-  BButtonPrototype: {fileID: 1875964306509896, guid: fcbaf2e5ac2af20409ed3a38109f5649,
+  BButtonPrototype: {fileID: 1875964306509896, guid: 1567d433d1a954f8583982ba49d3736a,
     type: 2}
-  XButtonPrototype: {fileID: 1425138978517280, guid: 510470214acb0b841878927fe4f9ab2a,
+  XButtonPrototype: {fileID: 1425138978517280, guid: 9de2be8331125480e894567ee933ad29,
     type: 2}
-  YButtonPrototype: {fileID: 1512436509682282, guid: 2a9081189007d4f4f9b186637a43e71a,
+  YButtonPrototype: {fileID: 1512436509682282, guid: 741fa57c048924569838fc7dd31a6b59,
     type: 2}
   HackedMessagePrototype: {fileID: 1503322196648832, guid: fcffcb0227e4240a5aebba92e9fffcce,
     type: 2}
@@ -395,7 +410,6 @@ MonoBehaviour:
   AudioSourcePrototype: {fileID: 1659979756111364, guid: 5b3f10646e4dd4a33b32b1cbd4997835,
     type: 2}
   BitcoinAudio: {fileID: 8300000, guid: 1ab676414de21304aa3320e74c9fb081, type: 3}
-  player: {fileID: 0}
   Budget: 2
 --- !u!114 &114115133962623258
 MonoBehaviour:
