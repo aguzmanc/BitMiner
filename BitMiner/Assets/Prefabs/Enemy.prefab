@@ -137,7 +137,8 @@ MonoBehaviour:
   Speed: 5
   MinTimeToChangeDirection: 20
   MaxTimeToChangeDirection: 40
-  PointsContainer: {fileID: 0}
+  PointsContainer: {fileID: 1972843997102676, guid: 25b6e9835e3096645a2677fe07b02200,
+    type: 2}
   StartOnAwake: 1
 --- !u!114 &114423027664896502
 MonoBehaviour:
@@ -163,7 +164,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShortCooldownSeconds: 3
   LongCooldownSeconds: 10
-  _isLocked: 0
+  DeactivatedEnemyAudio: {fileID: 8300000, guid: 5e0ca5c305cef0043a5daeea40d62a83,
+    type: 3}
+  AudioSourcePrototype: {fileID: 1659979756111364, guid: 5b3f10646e4dd4a33b32b1cbd4997835,
+    type: 2}
 --- !u!114 &114813250409330520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,6 +225,7 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -236,6 +241,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5

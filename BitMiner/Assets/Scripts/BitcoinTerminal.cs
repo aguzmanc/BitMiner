@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class BitcoinTerminal : Terminal 
 {
+	public AudioClip BitcoinAudio;
 	public Player player;
 	[Range(1,5)]
 	public int Budget = 1;
+
 	CoinTransmission _coinTransmission;
 	ParticleSystem _bitcoinParticleSystem;
 
@@ -28,6 +30,7 @@ public class BitcoinTerminal : Terminal
 	}
 
 	public override void Hack() {
+		Instantiate (AudioSourcePrototype).GetComponent<SoundEffectController> ().Play (BitcoinAudio);
 		_bitcoinParticleSystem.Play ();
 		player.WinCoins (Budget);
 	}

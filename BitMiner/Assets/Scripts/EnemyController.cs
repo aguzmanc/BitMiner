@@ -5,6 +5,9 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour {
 	public float ShortCooldownSeconds = 3;
 	public float LongCooldownSeconds = 10;
+	public AudioClip DeactivatedEnemyAudio;
+	public GameObject AudioSourcePrototype;
+
 	bool _isLocked = false;
 	bool _wasLocked = false;
 
@@ -41,6 +44,7 @@ public class EnemyController : MonoBehaviour {
 
 	public void StartLongCooldown() {
 		_remainingCooldown = Mathf.Max(_remainingCooldown, LongCooldownSeconds);
+		Instantiate (AudioSourcePrototype).GetComponent<SoundEffectController> ().Play (DeactivatedEnemyAudio);
 	}
 
 	public void Unlock() {
