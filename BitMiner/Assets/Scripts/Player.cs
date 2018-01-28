@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-	public float MovementSpeed = 0.01f;
+	public float MovementSpeed = 0.2f;
+	public ParticleSystem deathEffect;
+	public ParticleSystem innerDeathEffect;
+	public GameObject sprite;
 
 	float _horizontalAxis;
 	float _verticalAxis;
 	Rigidbody _body;
 	Vector3 _direction;
+	bool _canPlay = true;
 
 	void Awake() {
 		_body = GetComponent<Rigidbody>();
@@ -16,12 +20,19 @@ public class Player : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col) {
 		if (col.gameObject.CompareTag ("Enemy")) {
-			Debug.Log ("KILLED");		
+			Debug.Log ("KILLED");
+			if (_canPlay) {
+				deathEffect.Play ();
+				innerDeathEffect.Play ();
+				_canPlay = false;
+			}
+			sprite.SetActive (false);
 		}
 	}
 
 	void Update () {
-		handleMovement ();
+		if (sprite.activeInHierarchy)
+			handleMovement ();
 	}
 
 	void handleMovement() {
