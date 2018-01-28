@@ -228,16 +228,6 @@ Prefab:
       propertyPath: ScoreUI
       value: 
       objectReference: {fileID: 1043924291}
-    - target: {fileID: 65001002240869278, guid: 476e2968c67361049944017fa9f5d421,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 65001002240869278, guid: 476e2968c67361049944017fa9f5d421,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 476e2968c67361049944017fa9f5d421, type: 2}
   m_IsPrefabParent: 0
@@ -453,6 +443,12 @@ Prefab:
       propertyPath: Target
       value: 
       objectReference: {fileID: 366009248}
+    - target: {fileID: 114086829259481834, guid: c3093c2cd30c3df4694841f0b38e6dca,
+        type: 2}
+      propertyPath: AButtonPrototype
+      value: 
+      objectReference: {fileID: 1567517701247196, guid: 486240b3a5530884e9a2dbcd3c6a0c06,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3093c2cd30c3df4694841f0b38e6dca, type: 2}
   m_IsPrefabParent: 0
@@ -495,30 +491,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 114021314150852088, guid: e4683bc41444f4d2f979f349ceb06667,
-        type: 2}
-      propertyPath: HackedMessagePrototype
-      value: 
-      objectReference: {fileID: 1503322196648832, guid: fcffcb0227e4240a5aebba92e9fffcce,
-        type: 2}
-    - target: {fileID: 114021314150852088, guid: e4683bc41444f4d2f979f349ceb06667,
-        type: 2}
-      propertyPath: BButtonPrototype
-      value: 
-      objectReference: {fileID: 1875964306509896, guid: fcbaf2e5ac2af20409ed3a38109f5649,
-        type: 2}
-    - target: {fileID: 114021314150852088, guid: e4683bc41444f4d2f979f349ceb06667,
-        type: 2}
-      propertyPath: XButtonPrototype
-      value: 
-      objectReference: {fileID: 1425138978517280, guid: 510470214acb0b841878927fe4f9ab2a,
-        type: 2}
-    - target: {fileID: 114021314150852088, guid: e4683bc41444f4d2f979f349ceb06667,
-        type: 2}
-      propertyPath: YButtonPrototype
-      value: 
-      objectReference: {fileID: 1512436509682282, guid: 2a9081189007d4f4f9b186637a43e71a,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e4683bc41444f4d2f979f349ceb06667, type: 2}
   m_IsPrefabParent: 0
@@ -722,30 +694,6 @@ Prefab:
       propertyPath: Doors
       value: 
       objectReference: {fileID: 1736009200}
-    - target: {fileID: 114183186442883962, guid: 9b919a292db0de94e8776b3afb33e974,
-        type: 2}
-      propertyPath: HackedMessagePrototype
-      value: 
-      objectReference: {fileID: 1503322196648832, guid: fcffcb0227e4240a5aebba92e9fffcce,
-        type: 2}
-    - target: {fileID: 114183186442883962, guid: 9b919a292db0de94e8776b3afb33e974,
-        type: 2}
-      propertyPath: BButtonPrototype
-      value: 
-      objectReference: {fileID: 1875964306509896, guid: fcbaf2e5ac2af20409ed3a38109f5649,
-        type: 2}
-    - target: {fileID: 114183186442883962, guid: 9b919a292db0de94e8776b3afb33e974,
-        type: 2}
-      propertyPath: XButtonPrototype
-      value: 
-      objectReference: {fileID: 1425138978517280, guid: 510470214acb0b841878927fe4f9ab2a,
-        type: 2}
-    - target: {fileID: 114183186442883962, guid: 9b919a292db0de94e8776b3afb33e974,
-        type: 2}
-      propertyPath: YButtonPrototype
-      value: 
-      objectReference: {fileID: 1512436509682282, guid: 2a9081189007d4f4f9b186637a43e71a,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b919a292db0de94e8776b3afb33e974, type: 2}
   m_IsPrefabParent: 0

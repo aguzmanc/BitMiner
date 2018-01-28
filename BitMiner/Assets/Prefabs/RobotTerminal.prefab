@@ -496,20 +496,6 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_FalloffTable:
-    m_Table[0]: 0
-    m_Table[1]: 0
-    m_Table[2]: 0
-    m_Table[3]: 0
-    m_Table[4]: 0
-    m_Table[5]: 0
-    m_Table[6]: 0
-    m_Table[7]: 0
-    m_Table[8]: 0
-    m_Table[9]: 0
-    m_Table[10]: 0
-    m_Table[11]: 0
-    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -546,20 +532,6 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_FalloffTable:
-    m_Table[0]: 0
-    m_Table[1]: 0
-    m_Table[2]: 0
-    m_Table[3]: 0
-    m_Table[4]: 0
-    m_Table[5]: 0
-    m_Table[6]: 0
-    m_Table[7]: 0
-    m_Table[8]: 0
-    m_Table[9]: 0
-    m_Table[10]: 0
-    m_Table[11]: 0
-    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -605,8 +577,6 @@ MonoBehaviour:
   XButtonPrototype: {fileID: 1425138978517280, guid: 510470214acb0b841878927fe4f9ab2a,
     type: 2}
   YButtonPrototype: {fileID: 1512436509682282, guid: 2a9081189007d4f4f9b186637a43e71a,
-    type: 2}
-  HackedMessagePrototype: {fileID: 1503322196648832, guid: fcffcb0227e4240a5aebba92e9fffcce,
     type: 2}
   HackedMessagePrototype: {fileID: 1503322196648832, guid: fcffcb0227e4240a5aebba92e9fffcce,
     type: 2}
