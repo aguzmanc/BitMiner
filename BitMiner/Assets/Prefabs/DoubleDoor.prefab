@@ -37,6 +37,7 @@ GameObject:
   - component: {fileID: 4183264086945410}
   - component: {fileID: 33714643622129202}
   - component: {fileID: 23876012319955506}
+  - component: {fileID: 65800272059078314}
   m_Layer: 0
   m_Name: Puerta
   m_TagString: Untagged
@@ -70,6 +71,7 @@ GameObject:
   - component: {fileID: 4514818078323502}
   - component: {fileID: 33098859301888478}
   - component: {fileID: 23437319555153192}
+  - component: {fileID: 65559668485127918}
   m_Layer: 0
   m_Name: Puerta
   m_TagString: Untagged
@@ -255,6 +257,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 2.5, z: 2}
   m_Center: {x: 0.5, y: 1.25, z: 0}
+--- !u!65 &65559668485127918
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1910041333235638}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0100000035, y: 0.004000009, z: 0.024999995}
+  m_Center: {x: -6.9849193e-10, y: -9.3132246e-10, z: 0.012499997}
 --- !u!65 &65658298615011112
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -267,6 +281,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 2.5, z: 0.4}
   m_Center: {x: 0.5, y: 1.25, z: 0}
+--- !u!65 &65800272059078314
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1650322912365422}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0100000035, y: 0.004000009, z: 0.024999995}
+  m_Center: {x: 2.3283064e-10, y: -9.3132246e-10, z: 0.012499997}
 --- !u!114 &114279266736632988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -294,7 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SecondsToWaitToClose: 1
-  IsLocked: 0
+  IsLocked: 1
   EnemiesLocked: []
 --- !u!114 &114656840062767082
 MonoBehaviour:

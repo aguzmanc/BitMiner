@@ -207,7 +207,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SecondsToWaitToClose: 1
-  IsLocked: 0
+  IsLocked: 1
+  EnemiesLocked: []
 --- !u!208 &208390553911506392
 NavMeshObstacle:
   m_ObjectHideFlags: 1

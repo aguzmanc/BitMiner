@@ -18,11 +18,11 @@ public class Door : MonoBehaviour {
 		PositionClosed = transform.position;
 		switch (Direction) {
 		case 0:
-			PositionOpen = transform.position + new Vector3 (0, 0, Width);
+			PositionOpen = transform.position + new Vector3 (-Width, 0, 0);
 			break;
 		case 1:
 		default:
-			PositionOpen = transform.position + new Vector3 (0, 0, -Width);
+			PositionOpen = transform.position + new Vector3 (Width, 0, 0);
 			break;
 
 		}
