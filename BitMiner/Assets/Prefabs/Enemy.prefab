@@ -114,7 +114,7 @@ Animator:
   m_GameObject: {fileID: 1870662245458498}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a57cf932bf9714f9b9979dcfc6fa0c21, type: 2}
+  m_Controller: {fileID: 9100000, guid: f6e931cd8da0245078c184eaac3b2d35, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -183,6 +183,9 @@ MonoBehaviour:
   DegreesOfVision: 45.5
   Accuracy: 0.33
   TagToDetect: Player
+  DetectedPlayerAudio: {fileID: 8300000, guid: 5e0ca5c305cef0043a5daeea40d62a83, type: 3}
+  AudioSourcePrototype: {fileID: 1659979756111364, guid: 5b3f10646e4dd4a33b32b1cbd4997835,
+    type: 2}
 --- !u!114 &114973102116313846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -225,7 +228,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -241,7 +243,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -250,7 +251,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2a88d96955e184210b56d37ab0db72b0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4af34753edba1a94a8966a21bfe0706b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
