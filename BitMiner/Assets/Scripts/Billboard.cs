@@ -5,6 +5,9 @@ using UnityEngine;
 public class Billboard : MonoBehaviour {
 	
 	void Update () {
-		transform.Rotate (Camera.main.transform.eulerAngles - transform.eulerAngles, Space.World);
+		Vector3 direction = Camera.main.transform.eulerAngles - transform.eulerAngles;
+		if (Vector3.Magnitude (direction) > 1) {
+			transform.Rotate (direction, Space.World);
+		}
 	}
 }
