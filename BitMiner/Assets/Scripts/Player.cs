@@ -2,39 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 	[Range(5, 50)]
 	public int MovementSpeed = 20;
-	public ParticleSystem deathEffect;
-	public ParticleSystem innerDeathEffect;
-	public GameObject sprite;
+	public ParticleSystem DeathEffect;
+	public ParticleSystem InnerDeathEffect;
+	public GameObject Sprite;
+	public Text ScoreUI;
 
 	float _horizontalAxis;
 	float _verticalAxis;
 	Rigidbody _body;
 	Vector3 _direction;
 	bool _canMove = true;
+	int _score = 0;
 
 	void Awake() {
 		_body = GetComponent<Rigidbody>();
+		ScoreUI.text = "000";
 	}
 
 	void OnTriggerEnter(Collider col) {
 		if (col.gameObject.CompareTag ("Enemy")) {
 			Debug.Log ("KILLED");
 			if (_canMove) {
-				deathEffect.Play ();
-				innerDeathEffect.Play ();
+				DeathEffect.Play ();
+				InnerDeathEffect.Play ();
 				_canMove = false;
 			}
-			sprite.SetActive (false);
+			Sprite.SetActive (false);
 			StartCoroutine (Respawn());
 		}
 	}
 
 	void Update () {
-		if (sprite.activeInHierarchy)
+		if (Sprite.activeInHierarchy)
 			handleMovement ();
 	}
 
@@ -56,8 +60,18 @@ public class Player : MonoBehaviour {
 		_body.transform.Translate(new Vector3(0,0, 0.01f * MovementSpeed * (Mathf.Abs(_horizontalAxis) + Mathf.Abs(_verticalAxis))), Space.Self);
 	}
 
-	public void WinCoins() {
-		Debug.Log ("Pretend this means 100000$");
+	public void WinCoins(int value) {
+		_score += value;
+
+		string prefix = "";
+		if (_score < 10)
+			prefix = "00";
+		else if (_score >= 10 && _score < 99)
+			prefix = "0";
+		else
+			prefix = "";
+
+		ScoreUI.text = prefix + _score.ToString();
 	}
 
 	IEnumerator Respawn() {
