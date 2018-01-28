@@ -8,10 +8,16 @@ public class Player : MonoBehaviour {
 	float _horizontalAxis;
 	float _verticalAxis;
 	Rigidbody _body;
-	public Vector3 direction;
+	Vector3 _direction;
 
 	void Awake() {
 		_body = GetComponent<Rigidbody>();
+	}
+
+	void OnTriggerEnter(Collider col) {
+		if (col.gameObject.CompareTag ("Enemy")) {
+			Debug.Log ("KILLED");		
+		}
 	}
 
 	void Update () {
@@ -27,9 +33,9 @@ public class Player : MonoBehaviour {
 		//transform.Translate(movement);
 		//transform.eulerAngles = rotation;
 
-		direction = (Quaternion.Euler (0, Camera.main.transform.eulerAngles.y, 0) * new Vector3(_horizontalAxis, 0, _verticalAxis)) * Time.deltaTime;
-		if(direction != Vector3.zero) {
-			transform.rotation = Quaternion.LookRotation(direction);
+		_direction = (Quaternion.Euler (0, Camera.main.transform.eulerAngles.y, 0) * new Vector3(_horizontalAxis, 0, _verticalAxis)) * Time.deltaTime;
+		if(_direction != Vector3.zero) {
+			transform.rotation = Quaternion.LookRotation(_direction);
 			//transform.eulerAngles = new Vector3 (0, transform.eulerAngles.y, 0);
 		}
 
