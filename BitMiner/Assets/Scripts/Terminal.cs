@@ -25,6 +25,10 @@ public class Terminal : MonoBehaviour
 	public GameObject XButtonPrototype;
 	public GameObject YButtonPrototype;
 	public GameObject HackedMessagePrototype;
+	public AudioClip HackingAudio;
+	public AudioClip SuccessAudio;
+	public AudioClip FailAudio;
+	public GameObject AudioSourcePrototype;
 
 	HackedMessage _hackedMessage;
 
@@ -92,6 +96,7 @@ public class Terminal : MonoBehaviour
 		}
 
 		if(_HasPressedSomething() && _canBeHacked){
+			//Instantiate (AudioSourcePrototype).GetComponent<SoundEffectController> ().Play (HackingAudio);
 			if(HasPressedCorrectly()){
 				_remainingKeysTohack--;
 				_currentHackButton.Correct();
@@ -111,6 +116,7 @@ public class Terminal : MonoBehaviour
 				_retractCoroutine = StartCoroutine(_RetractCoroutine());
 			}
 			else{
+				Instantiate (AudioSourcePrototype).GetComponent<SoundEffectController> ().Play (FailAudio);
 				_isHacking = false;
 				_currentHackButton.Incorrect();
 				StartCoroutine(_WrongAnswerCoroutine(_currentHackButton));
@@ -124,6 +130,7 @@ public class Terminal : MonoBehaviour
 				_isHacked = true;
 				Hack();
 				_hackedMessage.Show ();
+				Instantiate (AudioSourcePrototype).GetComponent<SoundEffectController> ().Play (SuccessAudio);
 
 				StopCoroutine(_retractCoroutine);
 				if (!CanBeHackedMultipleTimes) {

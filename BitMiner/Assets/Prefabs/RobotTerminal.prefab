@@ -488,6 +488,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -524,6 +538,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -561,6 +589,7 @@ MonoBehaviour:
   NumberKeysToHack: 10
   SecondsBeforeRetract: 1
   DisableTimeOnBackHack: 5
+  CanBeHackedMultipleTimes: 0
   AButtonPrototype: {fileID: 1567517701247196, guid: 486240b3a5530884e9a2dbcd3c6a0c06,
     type: 2}
   BButtonPrototype: {fileID: 1567517701247196, guid: 486240b3a5530884e9a2dbcd3c6a0c06,
@@ -568,6 +597,13 @@ MonoBehaviour:
   XButtonPrototype: {fileID: 1567517701247196, guid: 486240b3a5530884e9a2dbcd3c6a0c06,
     type: 2}
   YButtonPrototype: {fileID: 1567517701247196, guid: 486240b3a5530884e9a2dbcd3c6a0c06,
+    type: 2}
+  HackedMessagePrototype: {fileID: 1503322196648832, guid: fcffcb0227e4240a5aebba92e9fffcce,
+    type: 2}
+  HackingAudio: {fileID: 8300000, guid: a878670357cd92347b125f7e158c102e, type: 3}
+  SuccessAudio: {fileID: 8300000, guid: 45615e85e4126d1418ab7c61da9e022c, type: 3}
+  FailAudio: {fileID: 8300000, guid: be06ccd682fa32a4085f9e20b3d4b7b6, type: 3}
+  AudioSourcePrototype: {fileID: 1659979756111364, guid: 5b3f10646e4dd4a33b32b1cbd4997835,
     type: 2}
 --- !u!114 &114051347312476142
 MonoBehaviour:
