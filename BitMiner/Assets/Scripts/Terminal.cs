@@ -6,7 +6,7 @@ public class Terminal : MonoBehaviour
 {
 	protected bool _canBeHacked;
 	protected bool _isNear;
-	protected bool _isHacking;
+	public bool _isHacking;
 	protected bool _isHacked;
 	protected int _remainingKeysTohack;
 	protected HackButton _currentHackButton;
@@ -50,6 +50,11 @@ public class Terminal : MonoBehaviour
 		_remainingKeysTohack = NumberKeysToHack;
 	}
 
+	void Update()
+	{
+		GetComponent<AudioSource> ().volume = _isHacking && _isNear ? 1 : 0;
+	}
+
 
 	void OnTriggerEnter(Collider other)
 	{
@@ -68,6 +73,9 @@ public class Terminal : MonoBehaviour
 			return;
 	
 		_isNear = false;
+		_isHacking = false;
+
+
 		if(_currentHackButton != null  && ! _currentHackButton.Hidden)
 			_currentHackButton.Hide();
 		_remainingKeysTohack = NumberKeysToHack;
@@ -95,6 +103,8 @@ public class Terminal : MonoBehaviour
 			_currentHackButton.Show ();
 		}
 
+
+
 		if(_HasPressedSomething() && _canBeHacked){
 			//Instantiate (AudioSourcePrototype).GetComponent<SoundEffectController> ().Play (HackingAudio);
 			if(HasPressedCorrectly()){
@@ -107,7 +117,7 @@ public class Terminal : MonoBehaviour
 				}
 
 				if(!_isHacking) {
-					_isHacking = false;
+					_isHacking = true;
 				}
 
 				if(_retractCoroutine != null)
