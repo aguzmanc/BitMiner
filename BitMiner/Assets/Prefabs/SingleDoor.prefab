@@ -209,6 +209,10 @@ MonoBehaviour:
   SecondsToWaitToClose: 1
   IsLocked: 1
   EnemiesLocked: []
+  OpenAudio: {fileID: 8300000, guid: 74823c6ab4f948b4c9fb8dcd94d13b30, type: 3}
+  CloseAudio: {fileID: 8300000, guid: fa693e9545e9cfb4ea19f583025a869e, type: 3}
+  AudioSourcePrototype: {fileID: 1659979756111364, guid: 5b3f10646e4dd4a33b32b1cbd4997835,
+    type: 2}
 --- !u!208 &208390553911506392
 NavMeshObstacle:
   m_ObjectHideFlags: 1
