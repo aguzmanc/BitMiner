@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 	public float MovementSpeed = 0.01f;
+	public GameObject deathEffect;
 
 	float _horizontalAxis;
 	float _verticalAxis;
@@ -16,7 +17,8 @@ public class Player : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col) {
 		if (col.gameObject.CompareTag ("Enemy")) {
-			Debug.Log ("KILLED");		
+			Debug.Log ("KILLED");
+			Destroy(Instantiate (deathEffect), 1.5f);
 		}
 	}
 
