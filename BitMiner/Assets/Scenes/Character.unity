@@ -491,6 +491,51 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1795066776}
+    - target: {fileID: 120597767955063256, guid: c3093c2cd30c3df4694841f0b38e6dca,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.m_NumColorKeys
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 120597767955063256, guid: c3093c2cd30c3df4694841f0b38e6dca,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key2.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 120597767955063256, guid: c3093c2cd30c3df4694841f0b38e6dca,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key2.g
+      value: 0.6827586
+      objectReference: {fileID: 0}
+    - target: {fileID: 120597767955063256, guid: c3093c2cd30c3df4694841f0b38e6dca,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.ctime2
+      value: 40092
+      objectReference: {fileID: 0}
+    - target: {fileID: 120597767955063256, guid: c3093c2cd30c3df4694841f0b38e6dca,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key2.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120597767955063256, guid: c3093c2cd30c3df4694841f0b38e6dca,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 0.99452335
+      objectReference: {fileID: 0}
+    - target: {fileID: 120597767955063256, guid: c3093c2cd30c3df4694841f0b38e6dca,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 0.60294116
+      objectReference: {fileID: 0}
+    - target: {fileID: 120597767955063256, guid: c3093c2cd30c3df4694841f0b38e6dca,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 120597767955063256, guid: c3093c2cd30c3df4694841f0b38e6dca,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.ctime1
+      value: 36044
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3093c2cd30c3df4694841f0b38e6dca, type: 2}
   m_IsPrefabParent: 0
