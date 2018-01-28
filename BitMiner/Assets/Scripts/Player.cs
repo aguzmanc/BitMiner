@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-	public float MovementSpeed = 0.2f;
+	[Range(5, 50)]
+	public int MovementSpeed = 20;
 	public ParticleSystem deathEffect;
 	public ParticleSystem innerDeathEffect;
 	public GameObject sprite;
@@ -50,6 +51,6 @@ public class Player : MonoBehaviour {
 			//transform.eulerAngles = new Vector3 (0, transform.eulerAngles.y, 0);
 		}
 
-		_body.transform.Translate(new Vector3(0,0,MovementSpeed * (Mathf.Abs(_horizontalAxis) + Mathf.Abs(_verticalAxis))), Space.Self);
+		_body.transform.Translate(new Vector3(0,0, 0.01f * MovementSpeed * (Mathf.Abs(_horizontalAxis) + Mathf.Abs(_verticalAxis))), Space.Self);
 	}
 }
