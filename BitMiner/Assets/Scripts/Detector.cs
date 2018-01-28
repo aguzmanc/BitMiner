@@ -14,6 +14,7 @@ public class Detector : MonoBehaviour {
 	public GameObject AudioSourcePrototype;
 
 	PatrolAgent _patrolAgent;
+	bool _hasDetected;
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +32,6 @@ public class Detector : MonoBehaviour {
 			if (Physics.Raycast (ray, out hit, Range)) {
 				if (hit.collider.tag == TagToDetect) {
 					foundTarget = true;
-					Instantiate (AudioSourcePrototype).GetComponent<SoundEffectController> ().Play (DetectedPlayerAudio);
 					targetPosition = hit.collider.transform.position;
 					rayColor = Color.green;
 				}
@@ -39,9 +39,14 @@ public class Detector : MonoBehaviour {
 			Debug.DrawRay (ray.origin, ray.direction * Range, rayColor);
 		}
 		if (foundTarget && _patrolAgent) {
+			if (!_hasDetected) {
+				Instantiate (AudioSourcePrototype).GetComponent<SoundEffectController> ().Play (DetectedPlayerAudio);
+				_hasDetected = true;
+			}
 			_patrolAgent.GoToSpecificPoint (targetPosition);
 		} else {
 			_patrolAgent.KeepPatrolling ();
+			_hasDetected = false;
 		}
 	}
 }
