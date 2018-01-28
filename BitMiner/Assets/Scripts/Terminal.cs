@@ -5,7 +5,7 @@ using UnityEngine;
 public class Terminal : MonoBehaviour 
 {
 	protected bool _canBeHacked;
-	protected bool _isNear;
+	public bool _isNear;
 	public bool _isHacking;
 	protected bool _isHacked;
 	protected int _remainingKeysTohack;
@@ -145,7 +145,8 @@ public class Terminal : MonoBehaviour
 				StopCoroutine(_retractCoroutine);
 				if (!CanBeHackedMultipleTimes) {
 					//_currentHackButton.Hide ();
-					Destroy (this);
+					//Destroy (this);
+					_canBeHacked = false;
 				} else {
 					_canBeHacked = false;
 					StartCoroutine (HideMessageAfterSeconds ());

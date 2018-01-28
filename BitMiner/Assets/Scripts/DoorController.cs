@@ -65,7 +65,7 @@ public class DoorController : MonoBehaviour {
 		HandleTrigger (other);
 	}
 
-	void OnTriggerStay(Collider other) {
+	void OnTriggerExit(Collider other) {
 		HandleTrigger (other);
 	}
 

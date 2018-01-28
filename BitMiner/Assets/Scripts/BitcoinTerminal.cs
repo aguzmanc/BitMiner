@@ -5,7 +5,7 @@ using UnityEngine;
 public class BitcoinTerminal : Terminal 
 {
 	public AudioClip BitcoinAudio;
-	public Player player;
+	Player player;
 	[Range(1,5)]
 	public int Budget = 1;
 
@@ -15,11 +15,17 @@ public class BitcoinTerminal : Terminal
 	public override void Awake() {
 		base.Awake();
 
-		_coinTransmission = GetComponentInChildren<CoinTransmission>();
-		_coinTransmission.Target = player.transform;
-
 		_bitcoinParticleSystem = GetComponentInChildren<ParticleSystem>();
+		_coinTransmission = GetComponentInChildren<CoinTransmission>();
 	}
+
+
+	void Start()
+	{
+		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player> ();
+		_coinTransmission.Target = player.transform;
+	}
+
 
 	public override void UpdateRemainingKeys() {
 		_coinTransmission.DesiredProgress = ((float)NumberKeysToHack - _remainingKeysTohack)/NumberKeysToHack;

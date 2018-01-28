@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Follower : MonoBehaviour {
 
-	public Transform Player;
-	public float Smoothness = 0.1f;
-	public Vector3 PlayerOffset;
+	public Transform Target;
+	public float Smoothness = 1f;
 
-	void Update () {
-		Vector3 desiredPosition = Player.position + PlayerOffset;
-		Vector3 smoothedPosition = Vector3.Lerp (transform.position, desiredPosition, Smoothness);
-		transform.position = smoothedPosition;
+
+	void Start()
+	{
+	}
+
+	void Update ()
+	{
+		transform.position = Vector3.Lerp (transform.position, Target.position, Smoothness * Time.deltaTime);
 	}
 }
