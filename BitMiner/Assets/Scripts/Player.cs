@@ -11,6 +11,8 @@ public class Player : MonoBehaviour {
 	public ParticleSystem InnerDeathEffect;
 	public GameObject Sprite;
 	public Text ScoreUI;
+	public AudioClip PlayerDeathAudio;
+	public GameObject AudioSourcePrototype;
 
 	float _horizontalAxis;
 	float _verticalAxis;
@@ -28,6 +30,7 @@ public class Player : MonoBehaviour {
 		if (col.gameObject.CompareTag ("Enemy")) {
 			Debug.Log ("KILLED");
 			if (_canMove) {
+				Instantiate (AudioSourcePrototype).GetComponent<SoundEffectController> ().Play (PlayerDeathAudio);
 				DeathEffect.Play ();
 				InnerDeathEffect.Play ();
 				_canMove = false;

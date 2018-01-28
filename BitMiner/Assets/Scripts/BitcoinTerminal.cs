@@ -7,6 +7,9 @@ public class BitcoinTerminal : Terminal
 	public Player player;
 	[Range(1,5)]
 	public int Budget = 1;
+	public AudioClip BitcoinAudio;
+	public GameObject AudioSourcePrototype;
+
 	CoinTransmission _coinTransmission;
 	ParticleSystem _bitcoinParticleSystem;
 
@@ -28,6 +31,7 @@ public class BitcoinTerminal : Terminal
 	}
 
 	public override void Hack() {
+		Instantiate (AudioSourcePrototype).GetComponent<SoundEffectController> ().Play (BitcoinAudio);
 		_bitcoinParticleSystem.Play ();
 		player.WinCoins (Budget);
 	}
