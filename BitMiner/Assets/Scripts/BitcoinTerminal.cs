@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class BitcoinTerminal : Terminal 
 {
+	public AudioClip BitcoinAudio;
 	public Player player;
 	[Range(1,5)]
 	public int Budget = 1;
-	public AudioClip BitcoinAudio;
-	public GameObject AudioSourcePrototype;
 
 	CoinTransmission _coinTransmission;
 	ParticleSystem _bitcoinParticleSystem;

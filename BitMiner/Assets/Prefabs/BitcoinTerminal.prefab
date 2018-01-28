@@ -314,6 +314,7 @@ MonoBehaviour:
   FailAudio: {fileID: 8300000, guid: be06ccd682fa32a4085f9e20b3d4b7b6, type: 3}
   AudioSourcePrototype: {fileID: 1659979756111364, guid: 5b3f10646e4dd4a33b32b1cbd4997835,
     type: 2}
+  BitcoinAudio: {fileID: 8300000, guid: 1ab676414de21304aa3320e74c9fb081, type: 3}
   player: {fileID: 0}
   Budget: 2
 --- !u!114 &114115133962623258
