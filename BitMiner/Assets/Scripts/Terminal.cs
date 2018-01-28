@@ -43,7 +43,7 @@ public class Terminal : MonoBehaviour
 		_hackedMessage = Instantiate (HackedMessagePrototype, transform.position, transform.rotation).GetComponent<HackedMessage>();
 	}
 
-	void Start()
+	public virtual void Start()
 	{
 		_canBeHacked = true;
 		_currentHackButton = _GenerateHackButton();

@@ -20,8 +20,10 @@ public class BitcoinTerminal : Terminal
 	}
 
 
-	void Start()
+	public override void Start()
 	{
+		base.Start ();
+
 		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player> ();
 		_coinTransmission.Target = player.transform;
 	}
