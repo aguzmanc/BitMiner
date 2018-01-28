@@ -103,6 +103,8 @@ public class Terminal : MonoBehaviour
 
 			if(_remainingKeysTohack==0) {
 				_isHacked = true;
+				Hack();
+
 				StopCoroutine(_retractCoroutine);
 				Destroy(this);
 			}
@@ -112,8 +114,8 @@ public class Terminal : MonoBehaviour
 
 
 	public  virtual void UpdateRemainingKeys() {}
-
 	public virtual void Exit() {}
+	public virtual void Hack() {}
 
 
 
