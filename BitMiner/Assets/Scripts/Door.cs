@@ -8,8 +8,8 @@ public class Door : MonoBehaviour {
 	public float Width = 1;
 	public float Height = 2.5f;
 
-	public bool _isOpening = false;
-	public bool _isClosing = false;
+	bool _isOpening = false;
+	bool _isClosing = false;
 	Vector3 PositionClosed;
 	Vector3 PositionOpen;
 

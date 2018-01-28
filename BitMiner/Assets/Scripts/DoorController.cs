@@ -10,7 +10,7 @@ public class DoorController : MonoBehaviour {
 	Door[] _doors;
 	NavMeshObstacle _nvo;
 	bool _doorsAreOpen = false;
-	public float _remainingCooldown = 0;
+	float _remainingCooldown = 0;
 
 	// Use this for initialization
 	void Start () {
