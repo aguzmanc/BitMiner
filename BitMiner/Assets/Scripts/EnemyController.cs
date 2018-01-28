@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour {
 	public float ShortCooldownSeconds = 3;
 	public float LongCooldownSeconds = 10;
-	public bool _isLocked = false;
+	bool _isLocked = false;
 	bool _wasLocked = false;
 
 	PatrolAgent _patrolAgent;
