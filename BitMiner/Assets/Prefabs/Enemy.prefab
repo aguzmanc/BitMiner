@@ -183,6 +183,9 @@ MonoBehaviour:
   DegreesOfVision: 45.5
   Accuracy: 0.33
   TagToDetect: Player
+  DetectedPlayerAudio: {fileID: 8300000, guid: 5e0ca5c305cef0043a5daeea40d62a83, type: 3}
+  AudioSourcePrototype: {fileID: 1659979756111364, guid: 5b3f10646e4dd4a33b32b1cbd4997835,
+    type: 2}
 --- !u!114 &114973102116313846
 MonoBehaviour:
   m_ObjectHideFlags: 1

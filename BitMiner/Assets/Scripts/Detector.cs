@@ -10,6 +10,8 @@ public class Detector : MonoBehaviour {
 	[Range(0.1f, 2)]
 	public float Accuracy = 1;
 	public string TagToDetect = "Player";
+	public AudioClip DetectedPlayerAudio;
+	public GameObject AudioSourcePrototype;
 
 	PatrolAgent _patrolAgent;
 
@@ -29,6 +31,7 @@ public class Detector : MonoBehaviour {
 			if (Physics.Raycast (ray, out hit, Range)) {
 				if (hit.collider.tag == TagToDetect) {
 					foundTarget = true;
+					Instantiate (AudioSourcePrototype).GetComponent<SoundEffectController> ().Play (DetectedPlayerAudio);
 					targetPosition = hit.collider.transform.position;
 					rayColor = Color.green;
 				}
