@@ -301,11 +301,11 @@ MonoBehaviour:
   CanBeHackedMultipleTimes: 0
   AButtonPrototype: {fileID: 1567517701247196, guid: 486240b3a5530884e9a2dbcd3c6a0c06,
     type: 2}
-  BButtonPrototype: {fileID: 1567517701247196, guid: 486240b3a5530884e9a2dbcd3c6a0c06,
+  BButtonPrototype: {fileID: 1875964306509896, guid: fcbaf2e5ac2af20409ed3a38109f5649,
     type: 2}
-  XButtonPrototype: {fileID: 1567517701247196, guid: 486240b3a5530884e9a2dbcd3c6a0c06,
+  XButtonPrototype: {fileID: 1425138978517280, guid: 510470214acb0b841878927fe4f9ab2a,
     type: 2}
-  YButtonPrototype: {fileID: 1567517701247196, guid: 486240b3a5530884e9a2dbcd3c6a0c06,
+  YButtonPrototype: {fileID: 1512436509682282, guid: 2a9081189007d4f4f9b186637a43e71a,
     type: 2}
   HackedMessagePrototype: {fileID: 1503322196648832, guid: fcffcb0227e4240a5aebba92e9fffcce,
     type: 2}

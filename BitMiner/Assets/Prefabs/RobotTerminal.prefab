@@ -170,7 +170,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1114493991132600}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0.5}
+  m_LocalPosition: {x: -4.338232, y: -7.9646965e-17, z: 3.58698}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4608817983492542}
@@ -297,6 +297,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -312,6 +313,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -329,6 +331,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -344,6 +347,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -361,6 +365,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -376,6 +381,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -393,6 +399,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -408,6 +415,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -561,13 +569,16 @@ MonoBehaviour:
   NumberKeysToHack: 10
   SecondsBeforeRetract: 1
   DisableTimeOnBackHack: 5
+  CanBeHackedMultipleTimes: 0
   AButtonPrototype: {fileID: 1567517701247196, guid: 486240b3a5530884e9a2dbcd3c6a0c06,
     type: 2}
-  BButtonPrototype: {fileID: 1567517701247196, guid: 486240b3a5530884e9a2dbcd3c6a0c06,
+  BButtonPrototype: {fileID: 1875964306509896, guid: fcbaf2e5ac2af20409ed3a38109f5649,
     type: 2}
-  XButtonPrototype: {fileID: 1567517701247196, guid: 486240b3a5530884e9a2dbcd3c6a0c06,
+  XButtonPrototype: {fileID: 1425138978517280, guid: 510470214acb0b841878927fe4f9ab2a,
     type: 2}
-  YButtonPrototype: {fileID: 1567517701247196, guid: 486240b3a5530884e9a2dbcd3c6a0c06,
+  YButtonPrototype: {fileID: 1512436509682282, guid: 2a9081189007d4f4f9b186637a43e71a,
+    type: 2}
+  HackedMessagePrototype: {fileID: 1503322196648832, guid: fcffcb0227e4240a5aebba92e9fffcce,
     type: 2}
 --- !u!114 &114051347312476142
 MonoBehaviour:
