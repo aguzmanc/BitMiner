@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DoorTerminal : Terminal 
 {
-	public Door Door;
+	public DoorController DoorController;
 
 	void Start () 
 	{

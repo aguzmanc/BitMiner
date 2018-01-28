@@ -11,9 +11,10 @@ public class PatrolAgent : MonoBehaviour {
 	[Range(2, 100)]
 	public int MaxTimeToChangeDirection = 40;
 	public GameObject PointsContainer;
-	public bool _isStopped = false;
+	public bool StartOnAwake = true;
 
 	int _destPointIndex;
+	bool _isStopped = false;
 	NavMeshAgent _agent;
 	bool _isPatrolling = true;
 	int _direction = 1; // -1 or 1
@@ -21,12 +22,14 @@ public class PatrolAgent : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		InitializePoints ();
-		RandomizeStartingPosition ();
 		_agent = GetComponent<NavMeshAgent> ();
 		_agent.autoBraking = false;
 		_agent.speed = Speed;
-		GoToNextPoint ();
-		StartCoroutine (ChangeDirectionAfterRandomTime ());
+		_isStopped = true;
+		if (StartOnAwake) {
+			StartPatrolling ();
+		}
+
 	}
 
 	void InitializePoints() {
@@ -39,7 +42,7 @@ public class PatrolAgent : MonoBehaviour {
 		}
 	}
 
-	void RandomizeStartingPosition() {
+	/*void RandomizeStartingPosition() {
 		if (Random.value < 0.5f) {
 			_direction = -1;
 		} else {
@@ -48,7 +51,12 @@ public class PatrolAgent : MonoBehaviour {
 		int randomPositionIndex = Random.Range (0, Points.Length);
 		_destPointIndex = randomPositionIndex;
 		transform.position = Points [_destPointIndex].position;
+	}*/
 
+	public void StartPatrolling() {
+		_agent.destination = Points[0].position;
+		StartCoroutine (ChangeDirectionAfterRandomTime ());
+		_isStopped = false;
 	}
 	
 	// Update is called once per frame
