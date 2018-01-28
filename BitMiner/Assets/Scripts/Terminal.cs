@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Terminal : MonoBehaviour 
 {
-	public bool _canBeHacked;
-	public bool _isNear;
-	public bool _isHacking;
-	public bool _isHacked;
-	public int _remainingKeysTohack;
+	protected bool _canBeHacked;
+	protected bool _isNear;
+	protected bool _isHacking;
+	protected bool _isHacked;
+	protected int _remainingKeysTohack;
 	protected HackButton _currentHackButton;
 	protected GameObject [] _prototypes;
 
@@ -49,7 +49,9 @@ public class Terminal : MonoBehaviour
 			return;
 
 		_isNear = true;
-		_currentHackButton.Show();
+		if (_canBeHacked) {
+			_currentHackButton.Show ();
+		}
 	}
 
 	void OnTriggerExit(Collider other)
@@ -80,6 +82,10 @@ public class Terminal : MonoBehaviour
 	{
 		if(other.tag != "Player")
 			return;
+	
+		if (_canBeHacked && _currentHackButton.Hidden) {
+			_currentHackButton.Show ();
+		}
 
 		if(_HasPressedSomething() && _canBeHacked){
 			if(HasPressedCorrectly()){
