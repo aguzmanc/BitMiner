@@ -191,7 +191,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4196982382282034, guid: bbcc0b555f2f6bb4c9f456366ae843ef, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1222065523096196, guid: bbcc0b555f2f6bb4c9f456366ae843ef, type: 2}
       propertyPath: m_StaticEditorFlags
@@ -237,7 +237,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4919890472433722, guid: dd7f272685720ef42bbe95c2bcf83d1f, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114793213998760628, guid: dd7f272685720ef42bbe95c2bcf83d1f,
         type: 2}
@@ -315,7 +315,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1486036988
 Prefab:
@@ -357,6 +357,12 @@ Prefab:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114070359495966714, guid: b423611b7cb66490ba43741befcbedc9,
+        type: 2}
+      propertyPath: PointsContainer
+      value: 
+      objectReference: {fileID: 1972843997102676, guid: 25b6e9835e3096645a2677fe07b02200,
+        type: 2}
+    - target: {fileID: 114248883799247254, guid: b423611b7cb66490ba43741befcbedc9,
         type: 2}
       propertyPath: PointsContainer
       value: 
